@@ -1,0 +1,17 @@
+{
+  "name": "shared-library",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.10",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "react": "^18.3.1"
+  }
+}

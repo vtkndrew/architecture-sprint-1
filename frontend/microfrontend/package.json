@@ -1,0 +1,21 @@
+{
+  "name": "mf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "npm ci && npm run install:photos && npm run install:users && npm run install:host",
+    "install:photos": "cd photos && npm ci",
+    "install:users": "cd users && npm ci",
+    "install:host": "cd host && npm ci",
+    "start:all": "stmux -w always -e ERROR -M -m beep,system -- [ [ \"npm run start:photos\" .. \"npm run start:users\" ] : -s 1/3 -f \"npm run start:host\" ]",
+    "start:photos": "cd photos && npm start",
+    "start:users": "cd users && npm start",
+    "start:host": "sleep 2 && cd host && npm start"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "stmux": "^1.8.10"
+  }
+}
